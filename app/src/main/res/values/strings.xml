@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Atoms Classification</string>
+
+    <string name="atom_number">Atomic number: %s</string>
+    <string name="atom_mass" translatable="false">%s u</string>
+    <string name="atom_density" translatable="false">%s g/cm3</string>
+    <string name="atom_kelvin" translatable="false">%s K</string>
+
+    <string name="number">Numéro</string>
+    <string name="group">Group</string>
+    <string name="period">Period</string>
+    <string name="family">Element category</string>
+    <string name="mass">Atomic weight</string>
+    <string name="density">Density</string>
+    <string name="boil">Sublimation</string>
+    <string name="melt">Heat of fusion</string>
+
+    <string name="alkali_metal">Alkali metal</string>
+    <string name="alkaline_earth_metal">Alkaline earth metal</string>
+    <string name="lanthanide" translatable="false">Lanthanide</string>
+    <string name="actinide" translatable="false">Actinide</string>
+    <string name="transition_metal">Transition metal</string>
+    <string name="post_transition_metal">"Post-transition metal "</string>
+    <string name="metalloid">Metalloid</string>
+    <string name="polyatomic_nonmetal">Polyatomic nonmetal</string>
+    <string name="diatomic_nonmetal">Non métal diatomique</string>
+    <string name="noble_gas">"Noble gases "</string>
+    <string name="undefined">Unknown</string>
+</resources>

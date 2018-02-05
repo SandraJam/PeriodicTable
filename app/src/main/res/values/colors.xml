@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e57373</color>
+    <color name="colorPrimaryDark">#af4448</color>
+    <color name="colorAccent">#00b8d4</color>
+
+    <color name="actinide_color">#89b8ff</color>
+    <color name="alkali_metal_color">#bab133</color>
+    <color name="alkaline_earth_metal_color">#6e4434</color>
+    <color name="lanthanide_color">#ffca89</color>
+    <color name="transition_metal_color">#be69f2</color>
+    <color name="post_transition_metal_color">#fd3f82</color>
+    <color name="metalloid_color">#df7491</color>
+    <color name="polyatomic_non_metal_color">#88ba5c</color>
+    <color name="diatomic_non_metal_color">#319461</color>
+    <color name="noble_gas_color">#89d2ff</color>
+    <color name="undefined_color">#595959</color>
+</resources>

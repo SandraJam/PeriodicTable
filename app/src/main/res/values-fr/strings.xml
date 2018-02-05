@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Classification des éléments</string>
+    <string name="atom_number">Numéro atomique: %s</string>
+    <string name="number">Numéro</string>
+    <string name="group">Groupe</string>
+    <string name="period">Période</string>
+    <string name="family">Famille</string>
+    <string name="mass">Masse atomique</string>
+    <string name="density">Densité</string>
+    <string name="boil">Point d\'ébulition</string>
+    <string name="melt">Point de fusion</string>
+    <string name="undefined">Indéfini</string>
+    <string name="noble_gas">Gaz noble</string>
+    <string name="diatomic_nonmetal">Non métal diatomique</string>
+    <string name="polyatomic_nonmetal">Non métal polyatomique</string>
+    <string name="metalloid">Métalloïde</string>
+    <string name="post_transition_metal">Métal pauvre</string>
+    <string name="transition_metal">Métal de transition</string>
+    <string name="alkaline_earth_metal">Métal alcalino-terreux</string>
+    <string name="alkali_metal">Métal alcalin</string>
+</resources>
