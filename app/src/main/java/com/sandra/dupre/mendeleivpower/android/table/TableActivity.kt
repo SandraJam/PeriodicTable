@@ -6,16 +6,23 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
-import android.view.ViewAnimationUtils
+import android.view.Menu
 
 import com.sandra.dupre.mendeleivpower.R
 import com.sandra.dupre.mendeleivpower.android.detail.DetailActivity
 import com.sandra.dupre.mendeleivpower.android.main.MainDependencies
 import com.sandra.dupre.mendeleivpower.android.viewModel.ResumeAtomViewModel
 import com.sandra.dupre.mendeleivpower.kernel.TableInteractor
-import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.activity_table.*
 import javax.inject.Inject
+import android.app.SearchManager
+import android.content.Context
+import android.support.v4.view.MenuItemCompat
+import android.support.v7.widget.SearchView
+import android.widget.Toast
+
+
+
 
 class TableActivity : AppCompatActivity(), TableView {
 
@@ -51,6 +58,27 @@ class TableActivity : AppCompatActivity(), TableView {
             Snackbar.make(atomsRecyclerView, "Une erreur est survenue", Snackbar.LENGTH_SHORT).show()
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean =
+            true.apply {
+                menuInflater.inflate(R.menu.menu_search, menu)
+                val searchItem = menu.findItem(R.id.search)
+
+                if (searchItem != null) {
+                    (searchItem.actionView as SearchView).setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                        override fun onQueryTextSubmit(query: String): Boolean {
+                            // do nothing
+                            return false
+                        }
+
+                        override fun onQueryTextChange(newText: String): Boolean {
+                            interactor.searchAtoms(newText)
+                            return false
+                        }
+                    })
+                }
+
+            }
 
     override fun onDestroy() {
         decorate.view = null

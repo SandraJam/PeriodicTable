@@ -38,8 +38,29 @@ class TableInteractorImplTest {
         then(tablePresenter).should(Mockito.only()).presentTable(list)
     }
 
+    @Test
+    fun testSearchAtomsWhenIsEmptyShouldDoNothing() {
+        interactor.searchAtoms("")
+
+        then(tablePresenter).shouldHaveZeroInteractions()
+    }
+
+    @Test
+    fun testSearchAtomsWhenIsFullOfWhiteSpaceShouldDoNothing() {
+        interactor.searchAtoms("     ")
+
+        then(tablePresenter).shouldHaveZeroInteractions()
+    }
+
+    @Test
+    fun testSearchAtomsWhenContainsQueryShouldCallPresenter() {
+        interactor.searchAtoms("e")
+
+        then(tablePresenter).should(Mockito.only()).presentTable(listOf(
+                createAtom("E", "Ee", 9, FamilyAtom.NOBLE_GAS)))
+    }
+
     private fun createAtom(symbol: String, name: String, number: Int, family: FamilyAtom) =
-            Atom(symbol, name, number, family, 1, 1, BigDecimal.ONE, BigDecimal.ONE,
-                    BigDecimal.ONE, BigDecimal.ONE)
+            Atom(symbol, name, number, family, 1, 1, 0f, 0f, 0f, 0f)
 
 }

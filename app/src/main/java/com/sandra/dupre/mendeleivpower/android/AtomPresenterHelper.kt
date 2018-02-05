@@ -7,12 +7,12 @@ import com.sandra.dupre.mendeleivpower.android.viewModel.AttributViewModel
 import com.sandra.dupre.mendeleivpower.android.viewModel.ResumeAtomViewModel
 import com.sandra.dupre.mendeleivpower.kernel.entity.Atom
 
-class AtomPresenterHelper(
+open class AtomPresenterHelper(
         private val familyFormatter: FamilyFormatter,
         private val resources: Resources
 ) {
 
-    fun getResumeAtomViewModel(atom: Atom) =
+    open fun getResumeAtomViewModel(atom: Atom) =
             ResumeAtomViewModel(
                     atom.symbol,
                     atom.name,
@@ -20,7 +20,7 @@ class AtomPresenterHelper(
                     familyFormatter.getColor(atom)
             )
 
-    fun getAtomViewModel(atom: Atom) =
+    open fun getAtomViewModel(atom: Atom) =
             AtomViewModel(
                     atom.symbol,
                     atom.name,

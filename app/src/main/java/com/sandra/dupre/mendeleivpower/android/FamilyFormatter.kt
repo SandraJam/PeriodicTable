@@ -5,8 +5,8 @@ import com.sandra.dupre.mendeleivpower.kernel.entity.Atom
 import com.sandra.dupre.mendeleivpower.kernel.entity.FamilyAtom
 import com.sandra.dupre.mendeleivpower.kernel.entity.FamilyAtom.*
 
-class FamilyFormatter {
-    fun getColor(atom: Atom) =
+open class FamilyFormatter {
+    open fun getColor(atom: Atom) =
             when(atom.family) {
                 ALKALI_METAL -> R.color.alkali_metal_color
                 ALKALINE_EARTH_METAL -> R.color.alkaline_earth_metal_color
@@ -21,7 +21,7 @@ class FamilyFormatter {
                 else -> R.color.undefined_color
             }
 
-    fun getLabel(atom: Atom) =
+    open fun getLabel(atom: Atom) =
             when(atom.family) {
                 ALKALI_METAL -> R.string.alkali_metal
                 ALKALINE_EARTH_METAL -> R.string.alkaline_earth_metal

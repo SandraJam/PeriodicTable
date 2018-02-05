@@ -11,36 +11,32 @@ import org.junit.Before
 
 import org.junit.Test
 import org.mockito.BDDMockito.*
+import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
-import java.math.BigDecimal
 
 class TablePresenterImplTest {
     @Mock lateinit var view: TableView
-    @Mock lateinit var resources: Resources
+    @Mock lateinit var helper: AtomPresenterHelper
 
-    lateinit var presenter: TablePresenterImpl
+    @InjectMocks lateinit var presenter: TablePresenterImpl
 
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
-
-        presenter = TablePresenterImpl(view, AtomPresenterHelper(FamilyFormatter(), resources))
     }
 
     @Test
     fun testPresentTable() {
-        given(resources.getString(R.string.atom_number, 5))
-                .willReturn("Number 5")
+        val atomViewModel = ResumeAtomViewModel("symbol", "name", "Number 5",
+                R.color.actinide_color)
         val element = Atom("symbol", "name", 5, FamilyAtom.ACTINIDE, 1,
-                1, BigDecimal.ONE, BigDecimal.ONE, BigDecimal.ONE, BigDecimal.ONE)
+                1, 0f, 0f, 0f, 0f)
+        given(helper.getResumeAtomViewModel(element)).willReturn(atomViewModel)
         presenter.presentTable(listOf(element))
 
-        then(view).should(Mockito.only()).displayTable(
-                listOf(ResumeAtomViewModel("symbol", "name", "Number 5",
-                        R.color.actinide_color))
-        )
+        then(view).should(Mockito.only()).displayTable(listOf(atomViewModel))
     }
 
 }

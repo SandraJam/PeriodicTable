@@ -46,7 +46,7 @@ class DetailInteractorImplTest {
     }
 
     private fun createAtom(symbol: String, name: String, number: Int, family: FamilyAtom) =
-            Atom(symbol, name, number, family, 1, 1, BigDecimal.ONE, BigDecimal.ONE,
-                    BigDecimal.ONE, BigDecimal.ONE)
+            Atom(symbol, name, number, family, 1, 1, 0f, 0f, 0f,
+                    0f)
 
 }

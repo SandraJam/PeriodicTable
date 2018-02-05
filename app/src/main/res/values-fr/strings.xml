@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Classification des éléments</string>
-    <string name="atom_number">Numéro atomique: %s</string>
+    <string name="atom_number">Numéro atomique: %d</string>
     <string name="number">Numéro</string>
     <string name="group">Groupe</string>
     <string name="period">Période</string>
@@ -19,4 +19,6 @@
     <string name="transition_metal">Métal de transition</string>
     <string name="alkaline_earth_metal">Métal alcalino-terreux</string>
     <string name="alkali_metal">Métal alcalin</string>
+
+    <string name="search_title">Recherche...</string>
 </resources>
