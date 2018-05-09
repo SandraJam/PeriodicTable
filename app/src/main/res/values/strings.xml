@@ -27,5 +27,6 @@
     <string name="noble_gas">"Noble gases "</string>
     <string name="undefined">Unknown</string>
 
-    <string name="search_title">Search...</string>
+    <string name="search_title">Search…</string>
+    <string name="filter_title">Filter…</string>
 </resources>

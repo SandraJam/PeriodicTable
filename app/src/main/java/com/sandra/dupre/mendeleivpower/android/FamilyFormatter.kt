@@ -21,8 +21,10 @@ open class FamilyFormatter {
                 else -> R.color.undefined_color
             }
 
-    open fun getLabel(atom: Atom) =
-            when(atom.family) {
+    open fun getLabelByAtom(atom: Atom) = getLabel(atom.family)
+
+    open fun getLabel(familyAtom: FamilyAtom) =
+            when(familyAtom) {
                 ALKALI_METAL -> R.string.alkali_metal
                 ALKALINE_EARTH_METAL -> R.string.alkaline_earth_metal
                 LANTHANIDE -> R.string.lanthanide

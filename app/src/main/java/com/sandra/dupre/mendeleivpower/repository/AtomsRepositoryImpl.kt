@@ -9,7 +9,6 @@ import java.math.BigDecimal
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
-
 class AtomsRepositoryImpl(private val asset: AssetManager) : AtomsRepository {
 
     private val atomList by lazy {
@@ -25,7 +24,7 @@ class AtomsRepositoryImpl(private val asset: AssetManager) : AtomsRepository {
                             it.number,
                             when (it.category) {
                                 "alkali metal" -> ALKALI_METAL
-                                "alkali earth metal" -> ALKALINE_EARTH_METAL
+                                "alkaline earth metal" -> ALKALINE_EARTH_METAL
                                 "lanthanide" -> LANTHANIDE
                                 "actinide" -> ACTINIDE
                                 "transition metal" -> TRANSITION_METAL

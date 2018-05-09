@@ -54,7 +54,7 @@ class AtomPresenterHelperTest {
         given(resources.getString(R.string.density)).willReturn("density")
         given(resources.getString(R.string.boil)).willReturn("boil")
         given(resources.getString(R.string.melt)).willReturn("melt")
-        given(familyFormatter.getLabel(atom)).willReturn(0)
+        given(familyFormatter.getLabelByAtom(atom)).willReturn(0)
         given(resources.getString(0)).willReturn("label")
         given(resources.getString(R.string.atom_mass, "0.0")).willReturn("0m")
         given(resources.getString(R.string.atom_density, "0.0")).willReturn("0d")

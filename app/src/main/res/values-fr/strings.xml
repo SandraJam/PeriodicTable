@@ -20,5 +20,6 @@
     <string name="alkaline_earth_metal">Métal alcalino-terreux</string>
     <string name="alkali_metal">Métal alcalin</string>
 
-    <string name="search_title">Recherche...</string>
+    <string name="search_title">Recherche…</string>
+    <string name="filter_title">Filtrer…</string>
 </resources>

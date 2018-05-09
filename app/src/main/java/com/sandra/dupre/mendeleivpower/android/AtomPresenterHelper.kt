@@ -32,7 +32,7 @@ open class AtomPresenterHelper(
                             ),
                             AttributViewModel(
                                     resources.getString(R.string.family),
-                                    resources.getString(familyFormatter.getLabel(atom))
+                                    resources.getString(familyFormatter.getLabelByAtom(atom))
                             ),
                             AttributViewModel(
                                     resources.getString(R.string.group),

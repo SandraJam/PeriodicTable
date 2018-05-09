@@ -1,6 +1,7 @@
 package com.sandra.dupre.mendeleivpower.android.table
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -11,18 +12,14 @@ import android.view.Menu
 import com.sandra.dupre.mendeleivpower.R
 import com.sandra.dupre.mendeleivpower.android.detail.DetailActivity
 import com.sandra.dupre.mendeleivpower.android.main.MainDependencies
-import com.sandra.dupre.mendeleivpower.android.viewModel.ResumeAtomViewModel
-import com.sandra.dupre.mendeleivpower.kernel.TableInteractor
+import com.sandra.dupre.mendeleivpower.kernel.interactor.TableInteractor
 import kotlinx.android.synthetic.main.activity_table.*
 import javax.inject.Inject
-import android.app.SearchManager
-import android.content.Context
-import android.support.v4.view.MenuItemCompat
 import android.support.v7.widget.SearchView
-import android.widget.Toast
-
-
-
+import android.view.View
+import android.widget.ArrayAdapter
+import com.sandra.dupre.mendeleivpower.android.viewModel.FamilyViewModel
+import com.sandra.dupre.mendeleivpower.android.viewModel.TableViewModel
 
 class TableActivity : AppCompatActivity(), TableView {
 
@@ -34,6 +31,8 @@ class TableActivity : AppCompatActivity(), TableView {
     @Inject lateinit var decorate: TableViewDecorator
 
     private val tableAdapter = TableAdapter()
+
+    private var isFirstList = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +48,14 @@ class TableActivity : AppCompatActivity(), TableView {
                 startActivityForResult(DetailActivity.newIntent(baseContext, symbol), REQUEST_CODE_FAIL)
             }
         }
+
+        atomsRecyclerView.layoutManager = LinearLayoutManager(this)
+        atomsRecyclerView.adapter = tableAdapter
+
+        familyFilterTextView.setOnClickListener {
+            interactor.removeFilter()
+        }
+
         decorate.view = this
         interactor.findAtoms()
     }
@@ -59,38 +66,68 @@ class TableActivity : AppCompatActivity(), TableView {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean =
-            true.apply {
-                menuInflater.inflate(R.menu.menu_search, menu)
-                val searchItem = menu.findItem(R.id.search)
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_search, menu)
+        val searchItem = menu.findItem(R.id.search)
 
-                if (searchItem != null) {
-                    (searchItem.actionView as SearchView).setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-                        override fun onQueryTextSubmit(query: String): Boolean {
-                            // do nothing
-                            return false
-                        }
-
-                        override fun onQueryTextChange(newText: String): Boolean {
-                            interactor.searchAtoms(newText)
-                            return false
-                        }
-                    })
+        if (searchItem != null) {
+            (searchItem.actionView as SearchView).setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String): Boolean {
+                    // do nothing
+                    return false
                 }
 
-            }
+                override fun onQueryTextChange(newText: String): Boolean {
+                    interactor.searchAtoms(newText)
+                    return false
+                }
+            })
+        }
+
+        menu.findItem(R.id.filter)?.setOnMenuItemClickListener {
+            interactor.createFamilyFilter()
+            false
+        }
+
+        return true
+    }
+
 
     override fun onDestroy() {
         decorate.view = null
         super.onDestroy()
     }
 
-    override fun displayTable(resumeAtoms: List<ResumeAtomViewModel>) {
-        tableAdapter.list = resumeAtoms
+    override fun displayTable(tableViewModel: TableViewModel) {
+        if(isFirstList) {
+            interactor.initTranslateList(
+                    tableViewModel.resumeAtomViewModels.map { Pair(it.symbol, it.name) }.toMap()
+            )
+            isFirstList = false
+        }
+
+        tableAdapter.list = tableViewModel.resumeAtomViewModels
         tableAdapter.notifyDataSetChanged()
 
-        atomsRecyclerView.layoutManager = LinearLayoutManager(this)
-        atomsRecyclerView.adapter = tableAdapter
+        familyFilterTextView.text = tableViewModel.filterLabel
+        familyFilterTextView.visibility = if (tableViewModel.isFilterActive) {
+            View.VISIBLE
+        } else {
+            View.GONE
+        }
+    }
+
+    override fun displayFilter(families: List<FamilyViewModel>) {
+        AlertDialog.Builder(this)
+                .setTitle("Filter by family")
+                .setAdapter(ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice)
+                        .apply { addAll(families.map { it.label }) },
+                        { dialog, position ->
+                            interactor.filterByFamily(families[position].code)
+                            dialog.dismiss()
+                        })
+                .create()
+                .show()
     }
 }
 

@@ -1,9 +1,12 @@
 package com.sandra.dupre.mendeleivpower.android.table
 
+import android.content.res.Resources
 import com.sandra.dupre.mendeleivpower.android.AtomPresenterHelper
+import com.sandra.dupre.mendeleivpower.android.FamilyFormatter
 import com.sandra.dupre.mendeleivpower.android.main.MainComponent
-import com.sandra.dupre.mendeleivpower.android.main.MainModule
 import com.sandra.dupre.mendeleivpower.kernel.*
+import com.sandra.dupre.mendeleivpower.kernel.interactor.TableInteractor
+import com.sandra.dupre.mendeleivpower.kernel.interactor.TableInteractorDecorate
 import dagger.Component
 import dagger.Module
 import dagger.Provides
@@ -16,7 +19,8 @@ annotation class TableScope
 @Module
 class TableModule {
 
-    @TableScope @Provides
+    @TableScope
+    @Provides
     fun providesTableViewDecorate(): TableViewDecorator = TableViewDecorator()
 
     @Provides
@@ -25,8 +29,9 @@ class TableModule {
     @Provides
     fun providesTablePresenter(
             view: TableView,
-            helper: AtomPresenterHelper
-    ): TablePresenter = TablePresenterImpl(view, helper)
+            helper: AtomPresenterHelper,
+            resources: Resources
+    ): TablePresenter = TablePresenterImpl(view, helper, resources, FamilyFormatter())
 
     @Provides
     fun providesDetailInteractor(
@@ -43,8 +48,8 @@ class TableModule {
 
 @TableScope
 @Component(
-        dependencies = arrayOf(MainComponent::class),
-        modules = arrayOf(TableModule::class)
+        dependencies = [(MainComponent::class)],
+        modules = [(TableModule::class)]
 )
 interface TableComponent {
     fun inject(activity: TableActivity)

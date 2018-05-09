@@ -6,4 +6,8 @@
         android:icon="@drawable/ic_search"
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="android.support.v7.widget.SearchView" />
+    <item android:id="@+id/filter"
+        android:title="@string/filter_title"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_filter"/>
 </menu>

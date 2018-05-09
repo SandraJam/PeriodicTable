@@ -19,6 +19,23 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/atomsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/familyFilterTextView"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="@color/colorAccent"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:text="Noble Gas"
+        android:textSize="18sp"
+        android:drawableEnd="@drawable/ic_clear"/>
 
 </LinearLayout>
