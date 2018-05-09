@@ -41,7 +41,7 @@ class TableInteractorImpl(
 
     override fun filterByFamily(familyAtom: FamilyAtom) {
         this.familyAtom = familyAtom
-        presenter.presentTable(getAtoms(), familyAtom)
+        searchAtoms(search)
     }
 
     override fun removeFilter() {

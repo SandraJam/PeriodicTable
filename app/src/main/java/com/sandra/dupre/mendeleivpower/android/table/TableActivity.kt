@@ -111,8 +111,7 @@ class TableActivity : AppCompatActivity(), TableView {
             isFirstList = false
         }
 
-        tableAdapter.list = tableViewModel.resumeAtomViewModels
-        tableAdapter.notifyDataSetChanged()
+        tableAdapter.replace(tableViewModel.resumeAtomViewModels)
 
         familyFilterTextView.text = tableViewModel.filterLabel
         familyFilterTextView.visibility = if (tableViewModel.isFilterActive) {

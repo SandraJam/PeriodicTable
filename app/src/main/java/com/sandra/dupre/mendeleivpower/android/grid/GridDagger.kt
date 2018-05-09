@@ -1,6 +1,7 @@
 package com.sandra.dupre.mendeleivpower.android.grid
 
 import android.content.res.Resources
+import com.sandra.dupre.mendeleivpower.android.AtomPresenterHelper
 import com.sandra.dupre.mendeleivpower.android.FamilyFormatter
 import com.sandra.dupre.mendeleivpower.android.main.MainComponent
 import com.sandra.dupre.mendeleivpower.kernel.AtomsRepository
@@ -30,8 +31,8 @@ class GridModule {
     @Provides
     fun providesGridPresenter(
             view: GridView,
-            resources: Resources
-    ): GridPresenter = GridPresenterImpl(view, resources, FamilyFormatter())
+            helper: AtomPresenterHelper
+    ): GridPresenter = GridPresenterImpl(view, helper)
 
     @Provides
     fun providesDetailInteractor(
