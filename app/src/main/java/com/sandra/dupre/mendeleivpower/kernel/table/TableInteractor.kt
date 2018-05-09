@@ -1,4 +1,4 @@
-package com.sandra.dupre.mendeleivpower.kernel.interactor
+package com.sandra.dupre.mendeleivpower.kernel.table
 
 import com.sandra.dupre.mendeleivpower.kernel.entity.FamilyAtom
 

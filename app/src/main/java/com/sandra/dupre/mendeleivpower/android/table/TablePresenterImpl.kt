@@ -5,7 +5,7 @@ import com.sandra.dupre.mendeleivpower.android.AtomPresenterHelper
 import com.sandra.dupre.mendeleivpower.android.FamilyFormatter
 import com.sandra.dupre.mendeleivpower.android.viewModel.FamilyViewModel
 import com.sandra.dupre.mendeleivpower.android.viewModel.TableViewModel
-import com.sandra.dupre.mendeleivpower.kernel.TablePresenter
+import com.sandra.dupre.mendeleivpower.kernel.table.TablePresenter
 import com.sandra.dupre.mendeleivpower.kernel.entity.Atom
 import com.sandra.dupre.mendeleivpower.kernel.entity.FamilyAtom
 

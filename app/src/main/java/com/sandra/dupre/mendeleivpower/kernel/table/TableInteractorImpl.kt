@@ -1,7 +1,7 @@
-package com.sandra.dupre.mendeleivpower.kernel
+package com.sandra.dupre.mendeleivpower.kernel.table
 
+import com.sandra.dupre.mendeleivpower.kernel.AtomsRepository
 import com.sandra.dupre.mendeleivpower.kernel.entity.FamilyAtom
-import com.sandra.dupre.mendeleivpower.kernel.interactor.TableInteractor
 
 class TableInteractorImpl(
         private val repository: AtomsRepository,

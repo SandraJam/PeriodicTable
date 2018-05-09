@@ -2,8 +2,11 @@ package com.sandra.dupre.mendeleivpower.android.detail
 
 import com.sandra.dupre.mendeleivpower.android.AtomPresenterHelper
 import com.sandra.dupre.mendeleivpower.android.main.MainComponent
-import com.sandra.dupre.mendeleivpower.android.main.MainModule
 import com.sandra.dupre.mendeleivpower.kernel.*
+import com.sandra.dupre.mendeleivpower.kernel.detail.DetailInteractor
+import com.sandra.dupre.mendeleivpower.kernel.detail.DetailInteractorDecorate
+import com.sandra.dupre.mendeleivpower.kernel.detail.DetailInteractorImpl
+import com.sandra.dupre.mendeleivpower.kernel.detail.DetailPresenter
 import dagger.Component
 import dagger.Module
 import dagger.Provides

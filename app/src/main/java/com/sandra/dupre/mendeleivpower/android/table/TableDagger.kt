@@ -5,8 +5,10 @@ import com.sandra.dupre.mendeleivpower.android.AtomPresenterHelper
 import com.sandra.dupre.mendeleivpower.android.FamilyFormatter
 import com.sandra.dupre.mendeleivpower.android.main.MainComponent
 import com.sandra.dupre.mendeleivpower.kernel.*
-import com.sandra.dupre.mendeleivpower.kernel.interactor.TableInteractor
-import com.sandra.dupre.mendeleivpower.kernel.interactor.TableInteractorDecorate
+import com.sandra.dupre.mendeleivpower.kernel.table.TableInteractor
+import com.sandra.dupre.mendeleivpower.kernel.table.TableInteractorDecorate
+import com.sandra.dupre.mendeleivpower.kernel.table.TableInteractorImpl
+import com.sandra.dupre.mendeleivpower.kernel.table.TablePresenter
 import dagger.Component
 import dagger.Module
 import dagger.Provides
@@ -34,14 +36,14 @@ class TableModule {
     ): TablePresenter = TablePresenterImpl(view, helper, resources, FamilyFormatter())
 
     @Provides
-    fun providesDetailInteractor(
+    fun providesTableInteractor(
             repository: AtomsRepository,
-            detailPresenter: TablePresenter
+            tablePresenter: TablePresenter
     ): TableInteractor =
             TableInteractorDecorate(
                     TableInteractorImpl(
                             repository,
-                            detailPresenter
+                            tablePresenter
                     )
             )
 }

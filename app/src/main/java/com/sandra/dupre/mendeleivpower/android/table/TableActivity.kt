@@ -12,12 +12,13 @@ import android.view.Menu
 import com.sandra.dupre.mendeleivpower.R
 import com.sandra.dupre.mendeleivpower.android.detail.DetailActivity
 import com.sandra.dupre.mendeleivpower.android.main.MainDependencies
-import com.sandra.dupre.mendeleivpower.kernel.interactor.TableInteractor
+import com.sandra.dupre.mendeleivpower.kernel.table.TableInteractor
 import kotlinx.android.synthetic.main.activity_table.*
 import javax.inject.Inject
 import android.support.v7.widget.SearchView
 import android.view.View
 import android.widget.ArrayAdapter
+import com.sandra.dupre.mendeleivpower.android.grid.GridActivity
 import com.sandra.dupre.mendeleivpower.android.viewModel.FamilyViewModel
 import com.sandra.dupre.mendeleivpower.android.viewModel.TableViewModel
 
@@ -54,6 +55,10 @@ class TableActivity : AppCompatActivity(), TableView {
 
         familyFilterTextView.setOnClickListener {
             interactor.removeFilter()
+        }
+
+        gridFormatButton.setOnClickListener {
+            startActivity(GridActivity.newIntent(this))
         }
 
         decorate.view = this

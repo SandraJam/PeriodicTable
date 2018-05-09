@@ -1,4 +1,4 @@
-package com.sandra.dupre.mendeleivpower.kernel
+package com.sandra.dupre.mendeleivpower.kernel.detail
 
 import com.sandra.dupre.mendeleivpower.kernel.entity.Atom
 

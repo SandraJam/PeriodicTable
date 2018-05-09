@@ -2,11 +2,12 @@ package com.sandra.dupre.mendeleivpower.kernel
 
 import com.sandra.dupre.mendeleivpower.kernel.entity.Atom
 import com.sandra.dupre.mendeleivpower.kernel.entity.FamilyAtom
+import com.sandra.dupre.mendeleivpower.kernel.detail.DetailInteractorImpl
+import com.sandra.dupre.mendeleivpower.kernel.detail.DetailPresenter
 import org.junit.Before
 
 import org.junit.Test
 import org.mockito.*
-import java.math.BigDecimal
 
 class DetailInteractorImplTest {
     @Mock lateinit var repository: AtomsRepository

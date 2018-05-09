@@ -3,6 +3,8 @@ package com.sandra.dupre.mendeleivpower.kernel
 import com.sandra.dupre.mendeleivpower.kernel.entity.Atom
 import com.sandra.dupre.mendeleivpower.kernel.entity.FamilyAtom
 import com.sandra.dupre.mendeleivpower.kernel.entity.FamilyAtom.*
+import com.sandra.dupre.mendeleivpower.kernel.table.TableInteractorImpl
+import com.sandra.dupre.mendeleivpower.kernel.table.TablePresenter
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 

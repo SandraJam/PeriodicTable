@@ -1,7 +1,7 @@
 package com.sandra.dupre.mendeleivpower.android.detail
 
 import com.sandra.dupre.mendeleivpower.android.AtomPresenterHelper
-import com.sandra.dupre.mendeleivpower.kernel.DetailPresenter
+import com.sandra.dupre.mendeleivpower.kernel.detail.DetailPresenter
 import com.sandra.dupre.mendeleivpower.kernel.entity.Atom
 
 open class DetailPresenterImpl(

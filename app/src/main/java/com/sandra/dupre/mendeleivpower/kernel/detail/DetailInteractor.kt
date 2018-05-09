@@ -1,4 +1,6 @@
-package com.sandra.dupre.mendeleivpower.kernel
+package com.sandra.dupre.mendeleivpower.kernel.detail
+
+import com.sandra.dupre.mendeleivpower.kernel.AtomsRepository
 
 interface DetailInteractor {
     fun findAtom(symbol: String)

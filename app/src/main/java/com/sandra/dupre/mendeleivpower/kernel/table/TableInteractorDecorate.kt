@@ -1,7 +1,7 @@
-package com.sandra.dupre.mendeleivpower.kernel.interactor
+package com.sandra.dupre.mendeleivpower.kernel.table
 
 import com.sandra.dupre.mendeleivpower.kernel.entity.FamilyAtom
-import com.sandra.dupre.mendeleivpower.kernel.interactor.TableInteractor
+import com.sandra.dupre.mendeleivpower.kernel.table.TableInteractor
 
 class TableInteractorDecorate(private val interactor: TableInteractor) : TableInteractor {
     override fun findAtoms() =
