@@ -13,7 +13,8 @@ data class ResumeAtomViewModel(
         val symbol: String,
         val name: String,
         val number: String,
-        @ColorRes val color: Int
+        @ColorRes val color: Int,
+        val isVisible: Boolean
 )
 
 data class AtomViewModel(

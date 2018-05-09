@@ -9,11 +9,16 @@ import kotlinx.android.synthetic.main.cell_atom_grid.view.*
 class GridViewHolder(itemView: View, private val listener: OnClickDetail) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(viewModel: ResumeAtomViewModel) {
-        itemView.atomImageView.setColorFilter(ContextCompat.getColor(itemView.context, viewModel.color))
-        itemView.atomSymbolTextView.text = viewModel.symbol
+        if (viewModel.isVisible) {
+            itemView.visibility = View.VISIBLE
+            itemView.atomImageView.setColorFilter(ContextCompat.getColor(itemView.context, viewModel.color))
+            itemView.atomSymbolTextView.text = viewModel.symbol
 
-        itemView.setOnClickListener {
-            listener.displayDetail(viewModel.symbol)
+            itemView.setOnClickListener {
+                listener.displayDetail(viewModel.symbol)
+            }
+        } else {
+            itemView.visibility = View.INVISIBLE
         }
     }
 

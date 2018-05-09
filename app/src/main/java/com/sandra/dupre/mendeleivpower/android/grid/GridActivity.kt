@@ -41,7 +41,7 @@ class GridActivity : AppCompatActivity(), GridView {
             }
         }
 
-        gridRecyclerView.layoutManager = GridLayoutManager(this, 9, GridLayoutManager.HORIZONTAL, false)
+        gridRecyclerView.layoutManager = GridLayoutManager(this, 10, GridLayoutManager.HORIZONTAL, false)
         gridRecyclerView.adapter = adapter
 
         decorate.view = this

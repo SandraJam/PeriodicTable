@@ -1066,7 +1066,7 @@
       "number": 89,
       "period": 7,
       "symbol": "Ac",
-      "group": 30
+      "group": 3
     },
     {
       "name": "Thorium",
@@ -1078,7 +1078,7 @@
       "number": 90,
       "period": 7,
       "symbol": "Th",
-      "group": 40
+      "group": 4
     },
     {
       "name": "Protactinium",
@@ -1090,7 +1090,7 @@
       "number": 91,
       "period": 7,
       "symbol": "Pa",
-      "group": 50
+      "group": 5
     },
     {
       "name": "Uranium",
@@ -1102,7 +1102,7 @@
       "number": 92,
       "period": 7,
       "symbol": "U",
-      "group": 60
+      "group": 6
     },
     {
       "name": "Neptunium",
@@ -1114,7 +1114,7 @@
       "number": 93,
       "period": 7,
       "symbol": "Np",
-      "group": 70
+      "group": 7
     },
     {
       "name": "Plutonium",
@@ -1126,7 +1126,7 @@
       "number": 94,
       "period": 7,
       "symbol": "Pu",
-      "group": 80
+      "group": 8
     },
     {
       "name": "Americium",
@@ -1138,7 +1138,7 @@
       "number": 95,
       "period": 7,
       "symbol": "Am",
-      "group": 90
+      "group": 9
     },
     {
       "name": "Curium",
@@ -1150,7 +1150,7 @@
       "number": 96,
       "period": 7,
       "symbol": "Cm",
-      "group": 100
+      "group": 10
     },
     {
       "name": "Berkelium",
@@ -1162,7 +1162,7 @@
       "number": 97,
       "period": 7,
       "symbol": "Bk",
-      "group": 110
+      "group": 11
     },
     {
       "name": "Californium",
@@ -1174,7 +1174,7 @@
       "number": 98,
       "period": 7,
       "symbol": "Cf",
-      "group": 120
+      "group": 12
     },
     {
       "name": "Einsteinium",
@@ -1186,7 +1186,7 @@
       "number": 99,
       "period": 7,
       "symbol": "Es",
-      "group": 130
+      "group": 13
     },
     {
       "name": "Fermium",
@@ -1198,7 +1198,7 @@
       "number": 100,
       "period": 7,
       "symbol": "Fm",
-      "group": 140
+      "group": 14
     },
     {
       "name": "Mendelevium",
@@ -1210,7 +1210,7 @@
       "number": 101,
       "period": 7,
       "symbol": "Md",
-      "group": 150
+      "group": 15
     },
     {
       "name": "Nobelium",
@@ -1222,7 +1222,7 @@
       "number": 102,
       "period": 7,
       "symbol": "No",
-      "group": 160
+      "group": 16
     },
     {
       "name": "Lawrencium",
@@ -1234,7 +1234,7 @@
       "number": 103,
       "period": 7,
       "symbol": "Lr",
-      "group": 170
+      "group": 17
     },
     {
       "name": "Rutherfordium",

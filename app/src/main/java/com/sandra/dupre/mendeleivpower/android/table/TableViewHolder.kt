@@ -6,7 +6,7 @@ import android.view.View
 import com.sandra.dupre.mendeleivpower.android.viewModel.ResumeAtomViewModel
 import kotlinx.android.synthetic.main.cell_atom.view.*
 
-class TableViewHolder(itemView: View, val listener: OnClikDetail) : RecyclerView.ViewHolder(itemView) {
+class TableViewHolder(itemView: View, private val listener: OnClikDetail) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(viewModel: ResumeAtomViewModel) {
         itemView.atomTextView.text = viewModel.name
