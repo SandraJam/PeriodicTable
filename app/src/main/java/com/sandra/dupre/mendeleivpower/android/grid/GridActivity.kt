@@ -8,6 +8,7 @@ import android.support.v7.widget.GridLayoutManager
 import com.sandra.dupre.mendeleivpower.R
 import com.sandra.dupre.mendeleivpower.android.detail.DetailActivity
 import com.sandra.dupre.mendeleivpower.android.main.MainDependencies
+import com.sandra.dupre.mendeleivpower.android.viewModel.GridViewModel
 import com.sandra.dupre.mendeleivpower.android.viewModel.ResumeAtomViewModel
 import com.sandra.dupre.mendeleivpower.kernel.grid.GridInteractor
 import kotlinx.android.synthetic.main.activity_grid.*
@@ -41,7 +42,7 @@ class GridActivity : AppCompatActivity(), GridView {
             }
         }
 
-        gridRecyclerView.layoutManager = GridLayoutManager(this, 10, GridLayoutManager.HORIZONTAL, false)
+        gridRecyclerView.layoutManager = GridLayoutManager(this, 11, GridLayoutManager.HORIZONTAL, false)
         gridRecyclerView.adapter = adapter
 
         decorate.view = this
@@ -53,7 +54,7 @@ class GridActivity : AppCompatActivity(), GridView {
         super.onDestroy()
     }
 
-    override fun displayGridAtoms(listAtoms: List<ResumeAtomViewModel>) {
+    override fun displayGridAtoms(listAtoms: List<GridViewModel>) {
         adapter.list = listAtoms
         adapter.notifyDataSetChanged()
     }

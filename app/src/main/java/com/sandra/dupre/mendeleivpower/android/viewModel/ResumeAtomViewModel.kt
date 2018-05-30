@@ -9,13 +9,19 @@ data class TableViewModel(
         val filterLabel: String
 )
 
+sealed class GridViewModel
+
 data class ResumeAtomViewModel(
         val symbol: String,
         val name: String,
         val number: String,
         @ColorRes val color: Int,
         val isVisible: Boolean
-)
+): GridViewModel()
+
+data class IndexViewModel(
+        val index: String
+): GridViewModel()
 
 data class AtomViewModel(
         val symbol: String,

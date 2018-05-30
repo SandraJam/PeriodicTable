@@ -18,7 +18,7 @@ open class AtomPresenterHelper(
                     atom.name,
                     resources.getString(R.string.atom_number, atom.number),
                     familyFormatter.getColor(atom),
-                    atom.name.isNotEmpty()
+                    atom.name.isNotEmpty() || atom.number < 0
             )
 
     open fun getAtomViewModel(atom: Atom) =

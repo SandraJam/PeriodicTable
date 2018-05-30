@@ -34,13 +34,37 @@ class AtomPresenterHelperTest {
     }
 
     @Test
-    fun testGetResumeAtomViewModel() {
+    fun testGetResumeAtomViewModelWhenHaveANameShouldIsVisible() {
         given(resources.getString(R.string.atom_number, 0)).willReturn("atom 0")
 
         val viewModel = helper.getResumeAtomViewModel(atom)
 
         assertThat(viewModel).isEqualTo(
-                ResumeAtomViewModel("C", "cc", "atom 0", 0)
+                ResumeAtomViewModel("C", "cc", "atom 0", 0, true)
+        )
+    }
+
+    @Test
+    fun testGetResumeAtomViewModelWhenNotHaveANameShouldIsNotVisible() {
+        given(resources.getString(R.string.atom_number, 0)).willReturn("atom 0")
+
+        val viewModel = helper.getResumeAtomViewModel(Atom("C", "", 0, FamilyAtom.ACTINIDE, 0,
+                0, 0f, 0f, 0f, 0f))
+
+        assertThat(viewModel).isEqualTo(
+                ResumeAtomViewModel("C", "", "atom 0", 0, false)
+        )
+    }
+
+    @Test
+    fun testGetResumeAtomViewModelWhenNotHaveButAWeirdNumberANameShouldIsVisible() {
+        given(resources.getString(R.string.atom_number, -1)).willReturn("atom 0")
+
+        val viewModel = helper.getResumeAtomViewModel(Atom("C", "", -1, FamilyAtom.ACTINIDE, 0,
+                0, 0f, 0f, 0f, 0f))
+
+        assertThat(viewModel).isEqualTo(
+                ResumeAtomViewModel("C", "", "atom 0", 0, true)
         )
     }
 

@@ -39,7 +39,7 @@ class TablePresenterImplTest {
     @Test
     fun testPresentTableWithFilter() {
         val atomViewModel = ResumeAtomViewModel("symbol", "name", "Number 5",
-                R.color.actinide_color)
+                R.color.actinide_color, true)
         val element = Atom("symbol", "name", 5, FamilyAtom.ACTINIDE, 1,
                 1, 0f, 0f, 0f, 0f)
         given(helper.getResumeAtomViewModel(element)).willReturn(atomViewModel)
@@ -53,7 +53,7 @@ class TablePresenterImplTest {
     @Test
     fun testPresentTableWithoutFilter() {
         val atomViewModel = ResumeAtomViewModel("symbol", "name", "Number 5",
-                R.color.actinide_color)
+                R.color.actinide_color, true)
         val element = Atom("symbol", "name", 5, FamilyAtom.ACTINIDE, 1,
                 1, 0f, 0f, 0f, 0f)
         given(helper.getResumeAtomViewModel(element)).willReturn(atomViewModel)
